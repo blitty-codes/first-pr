@@ -1,10 +1,20 @@
+import { KeyboardEvent, useRef } from 'react';
 import Head from 'next/head';
 
 import Languages from 'components/Languages';
 import useAppContext from 'hooks/useAppContext';
 
 export default function Home() {
-   const { addLang, state } = useAppContext();
+   const { addLang } = useAppContext();
+   const inputRef = useRef(null);
+
+   const onInputKeyPress = (event: KeyboardEvent<HTMLElement>) => {
+      const { value } = inputRef.current;
+
+      if (event.key === 'Enter' && value) {
+         addLang(value);
+      }
+   };
 
    return (
       <div className="grid bg-white">
@@ -21,9 +31,10 @@ export default function Home() {
 
                <div>
                   <input
-                     onClick={() => addLang('test')}
+                     ref={inputRef}
+                     onKeyDown={onInputKeyPress}
                      placeholder="lang"
-                     className="bg-gray-200 rounded px-4 py-2 w-64  focus:border-red-400"
+                     className="bg-gray-200 rounded px-4 py-2 w-64  focus:border-red-400 transition duration-500 ease-in-out transform focus:-translate-y-1 focus:scale-105"
                   />
                </div>
             </nav>
