@@ -7,7 +7,7 @@ interface LanguageProps {
 
 const Language = ({ name, removeLang }: LanguageProps) => {
    return (
-      <div className="bg-cool-gray-200 rounded p-2 mr-3 flex place-items-center">
+      <div className="bg-cool-gray-200 rounded p-2 mr-3 mb-3 flex place-items-center">
          <p>{name}</p>
          <div className="pl-3">
             <div

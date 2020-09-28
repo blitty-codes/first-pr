@@ -6,7 +6,7 @@ const Languages = () => {
    const { state, removeLang } = useAppContext();
 
    return (
-      <section className="flex">
+      <section className="flex flex-wrap">
          {state.lang.map((lang, index) => (
             <Language name={lang} key={index} removeLang={removeLang} />
          ))}

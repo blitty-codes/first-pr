@@ -25,7 +25,7 @@ export default function Home() {
 
          <main className="m-8">
             <nav className="flex justify-between place-items-center pb-4">
-               <h1 className="uppercase font-bold text-3xl bg-green-300 px-4">
+               <h1 className="uppercase font-bold text-xl bg-green-300 px-4 md:text-3xl">
                   First-PR
                </h1>
 
@@ -34,13 +34,11 @@ export default function Home() {
                      ref={inputRef}
                      onKeyDown={onInputKeyPress}
                      placeholder="lang"
-                     className="bg-gray-200 rounded px-4 py-2 w-64  focus:border-red-400 transition duration-500 ease-in-out transform focus:-translate-y-1 focus:scale-105"
+                     className="bg-gray-200 rounded px-4 py-2 w-32 md:w-64  focus:border-red-400 transition duration-500 ease-in-out transform focus:-translate-y-1 focus:scale-105"
                   />
                </div>
             </nav>
-            <div className="flex">
-               <Languages />
-            </div>
+            <Languages />
          </main>
 
          <footer></footer>
