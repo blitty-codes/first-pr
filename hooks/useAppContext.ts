@@ -35,12 +35,21 @@ const useAppContext = () => {
    const { state, setState } = useContext(AppContext);
 
    const addLang = (lang: string) => {
-      dispatch({ type: 'ADD', lang });
-
-      setState({ ...state, lang: [...state.lang, lang] });
+      if (!state.lang.includes(lang)) {
+         dispatch({ type: 'ADD', lang });
+         setState({ ...state, lang: [...state.lang, lang] });
+      }
    };
 
-   return { state, addLang, stat };
+   const removeLang = (language: string) => {
+      const lang = state.lang.filter((item) => item != language);
+
+      console.log(lang, language);
+
+      setState({ ...state, lang });
+   };
+
+   return { state, addLang, stat, removeLang };
 };
 
 export default useAppContext;
