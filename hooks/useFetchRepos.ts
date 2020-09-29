@@ -31,7 +31,7 @@ interface Owner {
 interface RepositoryInfo extends IssueInfo {
    stargazers_count: number;
    homepage?: string;
-   has_wiki: string;
+   has_wiki: boolean;
    owner: Owner;
 }
 
@@ -65,6 +65,7 @@ const useFetchRepos = () => {
                   owner: { avatar_url: data.owner.avatar_url },
                   homepage: data?.homepage,
                   has_wiki: data.has_wiki,
+                  stargazers_count: data.stargazers_count,
                } as RepositoryInfo;
             })
          );
