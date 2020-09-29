@@ -25,18 +25,18 @@ const Repo = ({
 }: RepoProps) => (
   <div className="xl:w-1/3 lg:w-1/3 ms:w-full md:w-full p-5 mr-4 ml-4 mb-8 border-2 border-gray-600 border-opacity-25 rounded shadow-lg ">
     <div className="w-auto">
-      <div className="relative top-info">
-        <div className="inline-block m-auto w-auto p">
-          <div className="border-2 border-gray-600 border-opacity-25 rounded">
+      <div className="relative onTop">
+        <div className="inline-block m-auto mr-5">
+          <div className="w-min-0 m-auto border-2 border-gray-600 border-opacity-25 rounded">
             <StarIcon width={30} height={30} />
           </div>
-          <p className="text-sm text-2xl text-center">{stars}</p>
+          <p className="text-sm text-xl text-center">{stars}</p>
         </div>
         <div className="inline-block m-auto">
-          <div className="border-2 border-gray-600 border-opacity-25 rounded">
+          <div className="w-min-0 m-auto border-2 border-gray-600 border-opacity-25 rounded">
             <CommentIcon width={30} height={30} />
           </div>
-          <p className="text-sm text-2xl text-center">{comments}</p>
+          <p className="text-sm text-xl text-center">{comments}</p>
         </div>
       </div>
       <div className="border p-2 border-gray-400 border-opacity-25 rounded">
@@ -62,11 +62,37 @@ const Repo = ({
               <img src={avatar_owner} />
             </div>
             <div className="mt-4">
-              <a href={homepage} target="_blanck" className="flex flex-row">
-                <HomeSiteIcon width={20} height={20} />{" "}
-                <p className="w-min-0 text-base align-top font-bold">
-                  homepage
-                </p>
+              <a
+                href={homepage}
+                target="_blanck"
+                className={`flex flex-row ${
+                  homepage === null
+                    ? "cursor-not-allowed no-underline"
+                    : "underline"
+                }`}
+              >
+                <abbr
+                  title={`${homepage === null ? "No homepage" : "homepage"}`}
+                  className="flex no-underline"
+                  style={{
+                    textDecoration: "none",
+                  }}
+                >
+                  <HomeSiteIcon
+                    width={20}
+                    height={20}
+                    isNull={homepage === null}
+                  />{" "}
+                  <p
+                    className={`w-min-0 text-base align-top font-bold ${
+                      homepage === null
+                        ? "text-gray-600 text-opacity-75"
+                        : "default"
+                    }`}
+                  >
+                    homepage
+                  </p>
+                </abbr>
               </a>
             </div>
             <div>Wiki: {has_wiki ? "Yes" : "No"}</div>
