@@ -5,20 +5,7 @@ type AppContextState = { lang: Array<string> };
 // renamed `initialState` to `appCtxDefaultValue` to be a bit more concise
 const appCtxDefaultValue = {
    state: {
-      lang: [
-         'gha',
-         'assssssgha',
-         'ghasdasda',
-         '123123213gha',
-         'asdasdasdasdasdasdas',
-         'gha',
-         'asdasdasdasdasdasdas',
-         'asdasdasdasdasdasdas',
-         'asdasdasdasdasdasdas',
-         'asdasdasdasdasdasdas',
-         'asdasdasdasdasdasdas',
-         'asdasdasdasdasdasdas',
-      ],
+      lang: ['javascript'],
    },
    setState: (state: AppContextState) => {}, // noop default callback
 };
