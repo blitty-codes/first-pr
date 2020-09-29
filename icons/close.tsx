@@ -12,6 +12,7 @@ const CloseIcon = ({ width, height }: CloseIconProps) => {
          xmlns="http://www.w3.org/2000/svg"
          width={width}
          height={height}
+         style={{margin:"auto"}}
       >
          <path
             strokeLinecap="round"
