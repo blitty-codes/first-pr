@@ -16,8 +16,8 @@ const Repos = () => {
             createdBy="World"
             description="Hello world, dfafsdafasfdsadfsafdsfd"
             homepage="https://IwI"
-            stars={15}
-            comments="5"
+            stars={155}
+            comments="555"
             avatar_owner="https://AvatarWorld"
             has_wiki={true}
          />
