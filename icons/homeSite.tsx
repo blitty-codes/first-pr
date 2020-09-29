@@ -1,13 +1,14 @@
 interface HomeSiteIconProps {
   width?: number;
   height?: number;
+  isNull?: boolean;
 }
 
-const HomeSiteIcon = ({ width, height }: HomeSiteIconProps) => {
+const HomeSiteIcon = ({ width, height, isNull }: HomeSiteIconProps) => {
   return (
     <svg
       fill="none"
-      stroke="currentColor"
+      stroke={`${isNull ? "grey" : "currentColor"}`}
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
       width={width}
