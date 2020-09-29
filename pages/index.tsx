@@ -2,6 +2,7 @@ import { KeyboardEvent, useRef } from 'react';
 import Head from 'next/head';
 
 import Languages from 'components/Languages';
+import Repos from 'components/Repos';
 import useAppContext from 'hooks/useAppContext';
 
 export default function Home() {
@@ -39,6 +40,8 @@ export default function Home() {
                </div>
             </nav>
             <Languages />
+            <hr />
+            <Repos />
          </main>
 
          <footer></footer>
