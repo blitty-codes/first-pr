@@ -10,31 +10,31 @@ const Repos = () => {
    console.log(repos);
 
    return (
-      <section className="flex flex-wrap mt-8 self-center">
+     <section className="flex flex-wrap mt-8 ms:mt-10 md:mt-10 self-center">
+       <Repo
+         title="Issue issue #444"
+         createdBy="World"
+         description="Hello world, dfafsdafasfdsadfsafdsfd"
+         homepage="https://IwI"
+         stars={155}
+         comments="555"
+         avatar_owner="https://AvatarWorld"
+         has_wiki={true}
+       />
+       {repos.map((repoInfo) => (
          <Repo
-            title="Issue issue #444"
-            createdBy="World"
-            description="Hello world, dfafsdafasfdsadfsafdsfd"
-            homepage="https://IwI"
-            stars={155}
-            comments="555"
-            avatar_owner="https://AvatarWorld"
-            has_wiki={true}
+           key={i++}
+           title={repoInfo.title}
+           createdBy="NOMBRE USUARIO CREADOR"
+           description={repoInfo.body}
+           homepage={repoInfo.homepage}
+           stars={repoInfo.stargazers_count}
+           comments={repoInfo.comments}
+           avatar_owner={repoInfo.owner.avatar_url}
+           has_wiki={repoInfo.has_wiki}
          />
-         {repos.map((repoInfo) => (
-            <Repo
-               key={i++}
-               title={repoInfo.title}
-               createdBy="NOMBRE USUARIO CREADOR"
-               description="DESCRIPCION FALTA"
-               homepage={repoInfo.homepage}
-               stars={repoInfo.stargazers_count}
-               comments={repoInfo.comments}
-               avatar_owner={repoInfo.owner.avatar_url}
-               has_wiki={repoInfo.has_wiki}
-            />
-         ))}
-      </section>
+       ))}
+     </section>
    );
 };
 
