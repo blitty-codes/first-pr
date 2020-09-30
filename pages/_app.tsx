@@ -1,5 +1,6 @@
 import 'styles/global.css';
 import 'tailwindcss/tailwind.css';
+import 'components/Repos/Repo/style.css';
 
 import { AppProvider } from 'context/AppContext';
 
